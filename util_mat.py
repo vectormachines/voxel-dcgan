@@ -3,10 +3,8 @@ import glob
 import scipy.io as io
 import scipy.ndimage as nd
 
-def get3DImages(filename):
-    all_files = np.random.choice(glob.glob(filename), size=10)
-    all_volumes = np.asarray([getVoxelsFromMat(f) for f in all_files], dtype=np.bool)
-    return all_volumes
+def get3DImage(data_dir):
+    return getVoxelsFromMat(data_dir, cube_len=64)
 
 def getVoxelsFromMat(path, cube_len=64):
     voxels = io.loadmat(path)['instance']
@@ -16,9 +14,8 @@ def getVoxelsFromMat(path, cube_len=64):
     return voxels
 
 def read_mat(filename):
-  volumes = get3DImages(filename=filename)
-  volumes = volumes[..., np.newaxis].astype(np.float)
-  return volumes[0]
+  volumes = get3DImage(filename)
+  return np.expand_dims(volumes, -1)
 
 def save_mat(filename, data):
-    io.savemat(filename,volumes)
+    io.savemat(filename, data)
