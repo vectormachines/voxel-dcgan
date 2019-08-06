@@ -1,5 +1,5 @@
 import tensorflow as tf
-import util
+import util_mat
 from ops import *
 
 class Model(object):
