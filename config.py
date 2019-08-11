@@ -1,6 +1,6 @@
 nz = 500 # noize vector size
 nsf = 4 # encoded voxel size, scale factor
-nvx = 32 # output voxel size
+nvx = 128 # output voxel size
 batch_size = 64
 learning_rate = 2e-4
 dataset_path = "/content/drive/My Drive/pillows/*.binvox"
