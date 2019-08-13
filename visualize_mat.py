@@ -1,6 +1,6 @@
 import tensorflow as tf
 import numpy as np
-import util
+import util_mat
 import config
 from model import *
 
@@ -24,4 +24,4 @@ with tf.Session(config=config_proto) as sess:
     batch_z = np.random.uniform(-1, 1, [config.batch_size, config.nz]).astype(np.float32)
     x_g = sess.run(x, feed_dict={z:batch_z, train:False})
     for i, data in enumerate(x_g):
-        util.save_binvox("out/{0}.binvox".format(i), data[:, :, :, 0] > 0.9)
+        util_mat.save_mat("/content/out/{0}.mat".format(i), data[:, :, :, 0] > 0.9)
