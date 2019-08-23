@@ -9,7 +9,7 @@ model = DCGAN(config.nz, config.nsf, config.nvx, config.batch_size, config.learn
 dataset = Dataset(config.dataset_path)
 total_batch = dataset.num_examples / config.batch_size
 
-for epoch in xrange(1, 51):
+for epoch in xrange(1, 501):
     for batch in xrange(total_batch):
         z = np.random.uniform(-1, 1, [config.batch_size, config.nz]).astype(np.float32)
         x = np.array(dataset.next_batch(config.batch_size))
