@@ -24,7 +24,7 @@ for epoch in xrange(1, 501):
                 util.save_binvox("./out/{0}-{1}.binvox".format(epoch, i), x > 0.5)
             print "{0:>2}, {1:>5}, {2:.8f}, {3:.8f}".format(epoch, batch, lossD, lossG)
 
-    if epoch % 10 == 0:
-        model.save("./params/epoch-{0}.ckpt".format(epoch))
+    # if epoch % 10 == 0:
+        # model.save("./params/epoch-{0}.ckpt".format(epoch))
 
 model.close()
