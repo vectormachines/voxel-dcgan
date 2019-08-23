@@ -21,7 +21,7 @@ for epoch in xrange(1, 501):
             lossD, lossG = model.get_errors(z, x)
             x_g = model.generate(z)
             for i, x in enumerate(x_g[:5]):
-                util.save_binvox("./out/{0}-{1}.binvox".format(epoch, i), x > 0.5)
+                util.save_binvox("{2}/{0}-{1}.binvox".format(epoch, i, config.out_path), x > 0.5)
             print "{0:>2}, {1:>5}, {2:.8f}, {3:.8f}".format(epoch, batch, lossD, lossG)
 
     # if epoch % 10 == 0:
