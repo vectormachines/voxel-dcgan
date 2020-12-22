@@ -19,7 +19,7 @@ saver = tf.train.Saver(varsG + tf.moving_average_variables())
 config_proto = tf.compat.v1.ConfigProto()
 config_proto.gpu_options.allow_growth = True
 
-with tf.compact.v1.Session(config=config_proto) as sess:
+with tf.compat.v1.Session(config=config_proto) as sess:
     saver.restore(sess, config.params_path)
     batch_z = np.random.uniform(-1, 1, [config.batch_size, config.nz]).astype(np.float32)
     x_g = sess.run(x, feed_dict={z:batch_z, train:False})
