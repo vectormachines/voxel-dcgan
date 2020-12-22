@@ -1,4 +1,4 @@
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 from ops import *
 
 class Model(object):
@@ -10,9 +10,9 @@ class Model(object):
         if sess is not None:
             self.sess = sess
         else:
-            config_proto = tf.compat.v1.ConfigProto()
+            config_proto = tf.ConfigProto()
             config_proto.gpu_options.allow_growth = True
-            self.sess = tf.compat.v1.Session(config=config_proto)
+            self.sess = tf.Session(config=config_proto)
 
     def initialize(self):
         self.sess.run(tf.global_variables_initializer())
