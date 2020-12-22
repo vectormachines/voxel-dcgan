@@ -4,5 +4,5 @@ nvx = 32 # output voxel size
 batch_size = 16
 learning_rate = 2e-4
 dataset_path = "/content/drive/MyDrive/v2/ubuntu-gtx1080/stars156-binvox/*.binvox"
-params_path = "params/voxel_dcgan_model.ckpt"
+params_path = "params/epoch-1.ckpt"
 out_path = "/content/drive/MyDrive/colab/out"
