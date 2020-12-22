@@ -16,7 +16,7 @@ varsG = [var for var in t_vars if var.name.startswith('G')]
 
 saver = tf.train.Saver(varsG + tf.moving_average_variables())
 
-config_proto = tf.ConfigProto()
+config_proto = tf.compat.v1.ConfigProto()
 config_proto.gpu_options.allow_growth = True
 
 with tf.Session(config=config_proto) as sess:

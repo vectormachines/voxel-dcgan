@@ -10,7 +10,7 @@ class Model(object):
         if sess is not None:
             self.sess = sess
         else:
-            config_proto = tf.ConfigProto()
+            config_proto = tf.compat.v1.ConfigProto()
             config_proto.gpu_options.allow_growth = True
             self.sess = tf.Session(config=config_proto)
 
