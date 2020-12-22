@@ -158,7 +158,7 @@ class Generator(object):
                 u = deconv3d(h, [4, 4, 4, nf/2, nf], [batch_size, nsf*2, nsf*2, nsf*2, nf/2], 'h{0}'.format(layer_idx))
                 h = tf.nn.relu(batch_norm(u, train, 'bn{0}'.format(layer_idx)))
                 _, _, _, nsf, nf = h.get_shape().as_list()
-                print nsf
+                print(nsf)
 
             layer_idx += 1
             u = deconv3d(h, [4, 4, 4, 1, nf], [batch_size, nvx, nvx, nvx, 1], 'h{0}'.format(layer_idx), bias=True, stride=1)
