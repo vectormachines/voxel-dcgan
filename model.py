@@ -30,7 +30,7 @@ class DCGAN(Model):
 
     def __init__(self, nz, nsf, nvx, batch_size, learning_rate, sess=None):
         self.session(sess)
-        opt = tf.optimizers.Adam(learning_rate, 0.5)
+        opt = tf.train.AdamOptimizer(learning_rate, 0.5)
         tower_gradsG = []
         tower_gradsD = []
         self.lossesG = []
