@@ -12,7 +12,7 @@ class Model(object):
         else:
             config_proto = tf.compat.v1.ConfigProto()
             config_proto.gpu_options.allow_growth = True
-            self.sess = tf.Session(config=config_proto)
+            self.sess = tf.compact.v1.Session(config=config_proto)
 
     def initialize(self):
         self.sess.run(tf.global_variables_initializer())
