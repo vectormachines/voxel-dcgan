@@ -1,5 +1,6 @@
 import numpy as np
 import trimesh # for converting voxel grids to meshes (to import objects into simulators)
+# trimesh==2.38.42 was the version that worked
 import time # to know how long it takes for the code to run
 import os # to walk through directories, to rename files
 import sys
