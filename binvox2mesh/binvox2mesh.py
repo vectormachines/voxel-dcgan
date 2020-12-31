@@ -27,7 +27,7 @@ if __name__ == "__main__":
 
     # Generate a folder to store the images
     print("Generating a folder to save the mesh")
-    directory = "./binvox2mesh_" + str(time.time())
+    directory = sys.argv[2] if len(sys.argv) >=3 else "./binvox2mesh_" + str(time.time())
     if not os.path.exists(directory):
         os.makedirs(directory)
 
