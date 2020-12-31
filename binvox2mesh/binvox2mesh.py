@@ -25,12 +25,6 @@ if __name__ == "__main__":
     # Load the voxelgrid from file
     voxelgrid = parse_BINVOX_file_into_voxel_grid(filename)
 
-    # Generate a folder to store the images
-    print("Generating a folder to save the mesh")
-    directory = sys.argv[2] if len(sys.argv) >=3 else "./binvox2mesh_" + str(time.time())
-    if not os.path.exists(directory):
-        os.makedirs(directory)
-
     mesh = trimesh.voxel.matrix_to_marching_cubes(
         matrix=voxelgrid,
         pitch=1.0,
@@ -51,6 +45,6 @@ if __name__ == "__main__":
     print("Generating the STL mesh file")
     trimesh.exchange.export.export_mesh(
         mesh=mesh,
-        file_obj=directory + "/mesh.stl",
+        file_obj=filename + ".stl",
         file_type="stl"
     )
