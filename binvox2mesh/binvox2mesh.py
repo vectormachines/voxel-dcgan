@@ -30,7 +30,7 @@ if __name__ == "__main__":
     if not os.path.exists(directory):
         os.makedirs(directory)
 
-    mesh = trimesh.voxel.ops.matrix_to_marching_cubes(
+    mesh = trimesh.voxel.matrix_to_marching_cubes(
         matrix=voxelgrid,
         pitch=1.0,
         origin=(0,0,0))
