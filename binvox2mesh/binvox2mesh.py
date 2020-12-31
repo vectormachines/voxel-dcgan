@@ -21,6 +21,7 @@ if __name__ == "__main__":
     print("python binvox2mesh.py <FILEPATH>")
     
     filename = sys.argv[1]
+    print("processing "+filename)
     
     # Load the voxelgrid from file
     voxelgrid = parse_BINVOX_file_into_voxel_grid(filename)
