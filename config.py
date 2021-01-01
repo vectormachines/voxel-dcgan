@@ -1,4 +1,4 @@
-nz = 500 # noize vector size
+nz = 10 # noize vector size
 nsf = 4 # encoded voxel size, scale factor
 nvx = 32 # output voxel size
 batch_size = 16
