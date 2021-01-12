@@ -16,9 +16,9 @@ def parse_BINVOX_file_into_voxel_grid(filename):
     return voxelgrid
 
 if __name__ == "__main__":
-    
-    print("Usage: ")
-    print("python binvox2mesh.py <FILEPATH>")
+    verbose = False
+    if verbose: print("Usage: ")
+    if verbose: print("python binvox2mesh.py <FILEPATH>")
     
     filename = sys.argv[1]
     print("processing "+filename)
@@ -31,19 +31,19 @@ if __name__ == "__main__":
         pitch=1.0,
         origin=(0,0,0))
 
-    print("Merging vertices closer than a pre-set constant...")
+    if verbose: print("Merging vertices closer than a pre-set constant...")
     mesh.merge_vertices()
-    print("Removing duplicate faces...")
+    if verbose: print("Removing duplicate faces...")
     mesh.remove_duplicate_faces()
-    print("Scaling...")
+    if verbose: print("Scaling...")
     mesh.apply_scale(scaling=1.0)
-    print("Making the mesh watertight...")
+    if verbose: print("Making the mesh watertight...")
     trimesh.repair.fill_holes(mesh)
-    print("Fixing inversion and winding...")
+    if verbose: print("Fixing inversion and winding...")
     trimesh.repair.fix_inversion(mesh)
     trimesh.repair.fix_winding(mesh)
 
-    print("Generating the STL mesh file")
+    if verbose: print("Generating the STL mesh file")
     trimesh.exchange.export.export_mesh(
         mesh=mesh,
         file_obj=filename + ".stl",
