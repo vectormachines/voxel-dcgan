@@ -5,7 +5,7 @@ from ops import *
 class Model(object):
 
     def __init__(self, vars):
-        console.log(vars)
+        print(vars)
         self.saver = tf.train.Saver(vars)
 
     def session(self, sess):
