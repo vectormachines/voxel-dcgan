@@ -5,7 +5,7 @@ from ops import *
 class Model(object):
 
     def __init__(self, vars):
-        vars.max_to_keep=20
+        console.log(vars)
         self.saver = tf.train.Saver(vars)
 
     def session(self, sess):
