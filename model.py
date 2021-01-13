@@ -5,8 +5,7 @@ from ops import *
 class Model(object):
 
     def __init__(self, vars):
-        print(vars)
-        self.saver = tf.train.Saver(vars)
+        self.saver = tf.train.Saver(vars, max_to_keep=0)
 
     def session(self, sess):
         if sess is not None:
